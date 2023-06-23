@@ -8,30 +8,29 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen_A from './Screen_A';
 import Screen_B from './Screen_B';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 const App = () => {
-    return (
+    return(
         <NavigationContainer>
             <Stack.Navigator
-            // screenOptions={{
-            //     header: () => null
-            // }}
+                // screenOptions={{
+                //     header: () => null
+                // }}
             >
-                <Stack.Screen
-                    name='Screen_A'
-                    component={Screen_A}
+                <Stack.Screen 
+                   name='Screen_A'
+                   component={ Screen_A }
                 //    options={{
                 //     header: () => null
                 //    }}
                 />
-                <Stack.Screen
-                    name='Screen_B'
-                    component={Screen_B}
-                // options={{
-                //     header: () => null
-                // }} 
+                <Stack.Screen 
+                   name='Screen_B'
+                   component={ Screen_B }
+                    // options={{
+                    //     header: () => null
+                    // }} 
                 />
             </Stack.Navigator>
         </NavigationContainer>
