@@ -8,24 +8,24 @@ import Screen_A from './Screen_A';
 import Screen_B from './Screen_B';
 import { NavigationContainer } from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 const App = () => {
     return (
         <NavigationContainer>
             <Tab.Navigator
                 screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, size,color }) => {
+                    tabBarIcon: ({ focused, size, color }) => {
                         let iconName;
                         if (route.name === 'Screen_A') {
                             iconName = 'autoprefixer';
-                            size = focused ? 25 : 20;
-                            // color = focused ? '#f0f' : '#555';
+                            size = focused ? 30 : 25;
+                            color = focused ? '#f0f' : '#555'
                         } else if (route.name === 'Screen_B') {
-                            iconName = 'btc';
-                            size = focused ? 25 : 20;
-                            // color = focused ? '#f0f' : '#555';
+                            iconName = 'btc'
+                            size = focused ? 30 : 25;
+                            color = focused ? '#f0f' : '#555'
                         }
                         return (
                             <FontAwesome5
@@ -40,16 +40,18 @@ const App = () => {
                     "tabBarActiveBackgroundColor": '#fff',
                     "tabBarInactiveBackgroundColor": '#999',
                     "tabBarShowLabel": false,
-                })}
 
+                })}
             >
                 <Tab.Screen
                     name='Screen_A'
                     component={Screen_A}
+                    options={{ tabBarBadge: 7 }}
                 />
                 <Tab.Screen
                     name='Screen_B'
                     component={Screen_B}
+                    options={{ tabBarBadge: 2 }}
                 />
             </Tab.Navigator>
         </NavigationContainer>
