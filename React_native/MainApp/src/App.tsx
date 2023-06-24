@@ -20,11 +20,11 @@ const App = () => {
                         let iconName;
                         if (route.name === 'Screen_A'){
                             iconName = 'autoprefixer';
-                            size = focused ? 25 : 20;
+                            size = focused ? 30 : 25;
                             color = focused ? '#f0f' : '#555'
                         } else if (route.name === 'Screen_B'){
                             iconName='btc'
-                            size = focused ? 25 : 20;
+                            size = focused ? 30 : 25;
                             color = focused ? '#f0f' : '#555'
                         }
                         return (
@@ -40,7 +40,7 @@ const App = () => {
                     "tabBarActiveBackgroundColor": '#fff',
                     "tabBarInactiveBackgroundColor": '#999',
                     "tabBarShowLabel": false,
-                    
+
                 })}
             >
                 <Tab.Screen
