@@ -8,7 +8,6 @@ import Screen_A from './Screen_A';
 import Screen_B from './Screen_B';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 const Tab = createBottomTabNavigator();
 const App = () => {
@@ -25,9 +24,7 @@ const App = () => {
                             iconName='btc'
                         }
                         return (
-                            <FontAwesome5 
-                                name={iconName}
-                            />
+                            <Text>Hello</Text>
                         )
                     }
                 })}

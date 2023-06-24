@@ -1,6 +1,6 @@
 apply plugin: "com.android.application"
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply plugin: "com.facebook.react"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 import com.android.build.OutputFile
 
 /**
@@ -53,6 +53,12 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
+// project.ext.react = [
+//     enableHermes: false,  // clean and rebuild if changing
+// ]
+
+// apply from: "../../node_modules/react-native/react.gradle"
+
 /**
  * Set this to true to create four separate APKs instead of one,
  * one for each native architecture. This is useful if you don't
@@ -91,7 +97,7 @@ def reactNativeArchitectures() {
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-    compileSdkVersion rootProject.ext.compileSdkVersion?
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     namespace "com.mainapp"
     defaultConfig {
