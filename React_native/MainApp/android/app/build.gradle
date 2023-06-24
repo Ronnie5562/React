@@ -8,11 +8,6 @@ import com.android.build.OutputFile
  * By default you don't need to apply any configuration, just uncomment the lines you need.
  */
 
-android {
-    compileSdkVersion 30
-    // Other configurations...
-}
-
 react {
     /* Folders */
     //   The root of your project, i.e. where "package.json" lives. Default is '..'
@@ -96,8 +91,7 @@ def reactNativeArchitectures() {
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-
-    // compileSdkVersion rootProject.ext.compileSdkVersion?
+    compileSdkVersion rootProject.ext.compileSdkVersion?
 
     namespace "com.mainapp"
     defaultConfig {
