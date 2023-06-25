@@ -4,8 +4,8 @@ import {
     Text,
     Pressable,
 } from 'react-native';
-import Screen_A from './Screen_A';
-import Screen_B from './Screen_B';
+import Screen_A from './screens/Screen_A';
+import Screen_B from './screens/Screen_B';
 import { NavigationContainer } from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';

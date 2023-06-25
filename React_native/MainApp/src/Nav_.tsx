@@ -4,8 +4,8 @@ import {
     Text,
     Pressable,
 } from 'react-native';
-import Screen_A from './Screen_A';
-import Screen_B from './Screen_B';
+import Screen_A from './screens/Screen_A';
+import Screen_B from './screens/Screen_B';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -16,19 +16,19 @@ const App = () => {
         <NavigationContainer>
             <Tab.Navigator
                 screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, size, color}) => {
+                    tabBarIcon: ({ focused, size, color }) => {
                         let iconName;
-                        if (route.name === 'Screen_A'){
+                        if (route.name === 'Screen_A') {
                             iconName = 'autoprefixer';
                             size = focused ? 30 : 25;
                             color = focused ? '#f0f' : '#555'
-                        } else if (route.name === 'Screen_B'){
-                            iconName='btc'
+                        } else if (route.name === 'Screen_B') {
+                            iconName = 'btc'
                             size = focused ? 30 : 25;
                             color = focused ? '#f0f' : '#555'
                         }
                         return (
-                            <FontAwesome5 
+                            <FontAwesome5
                                 name={iconName}
                                 size={size}
                                 color={color}

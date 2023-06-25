@@ -1,73 +1,43 @@
-import {
-    StyleSheet,
-    View,
-    Text,
-    Pressable,
-} from 'react-native';
-import Screen_A from './Screen_A';
-import Screen_B from './Screen_B';
-import { NavigationContainer } from '@react-navigation/native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Tab = createMaterialTopTabNavigator();
-const App = () => {
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './screens/Home';
+import Login from './screens/Login';
+
+const Stack = createStackNavigator();
+
+function App() {
     return (
         <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, size,color }) => {
-                        let iconName;
-                        if (route.name === 'Screen_A') {
-                            iconName = 'autoprefixer';
-                            size = focused ? 25 : 20;
-                            // color = focused ? '#f0f' : '#555';
-                        } else if (route.name === 'Screen_B') {
-                            iconName = 'btc';
-                            size = focused ? 25 : 20;
-                            // color = focused ? '#f0f' : '#555';
-                        }
-                        return (
-                            <FontAwesome5
-                                name={iconName}
-                                size={size}
-                                color={color}
-                            />
-                        )
+            <Stack.Navigator
+                initialRouteName="Login"
+                screenOptions={{
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#0080ff'
                     },
-                    "tabBarActiveTintColor": '#f0f',
-                    "tabBarInactiveTintColor": '#555',
-                    "tabBarActiveBackgroundColor": '#fff',
-                    "tabBarInactiveBackgroundColor": '#999',
-                    "tabBarShowLabel": false,
-                })}
-
+                    headerTintColor: '#ffffff',
+                    headerTitleStyle: {
+                        fontSize: 25,
+                        fontWeight: 'bold'
+                    }
+                }}
             >
-                <Tab.Screen
-                    name='Screen_A'
-                    component={Screen_A}
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{
+                        headerShown: false,
+                    }}
                 />
-                <Tab.Screen
-                    name='Screen_B'
-                    component={Screen_B}
+                <Stack.Screen
+                    name="Home"
+                    component={Home}
                 />
-            </Tab.Navigator>
+            </Stack.Navigator>
         </NavigationContainer>
     )
 }
-
-const styles = StyleSheet.create({
-    body: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 40,
-        fontWeight: 'bold',
-        margin: 10,
-        color: '#000',
-    }
-})
 
 export default App;
