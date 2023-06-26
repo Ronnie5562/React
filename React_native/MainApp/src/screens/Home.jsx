@@ -5,7 +5,7 @@ import {
     Pressable,
 } from 'react-native';
 
-const Screen_A = ({ navigation }) => {
+const Home = ({ navigation }) => {
 
     const onPressHandler = () => {
         navigation.navigate('Screen_B');
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Screen_A;
+export default Home;
