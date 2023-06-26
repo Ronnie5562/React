@@ -2,6 +2,7 @@ import tw from 'twrnc';
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import { Icon } from '@rneui/base';
+import { useNavigation } from '@react-navigation/native';
 
 const data = [
     {
@@ -19,6 +20,8 @@ const data = [
 ]
 
 const NavOptions = () => {
+    const navigation = useNavigation();
+
   return (
     <FlatList
         data={data}
@@ -27,7 +30,7 @@ const NavOptions = () => {
         style={tw`ml--3`}
         renderItem={({ item }) => (
             <TouchableOpacity
-                style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}
+                style={[tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`, styles.nav]}
             >
                 <View>
                     <Image
@@ -51,4 +54,8 @@ const NavOptions = () => {
 
 export default NavOptions
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    nav: {
+        borderRadius: 10
+    }
+})
