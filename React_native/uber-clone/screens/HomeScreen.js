@@ -1,6 +1,7 @@
 import tw from 'twrnc';
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View, Image } from 'react-native'
+import NavOptions from '../components/NavOptions';
 
 const HomeScreen = () => {
   return (
@@ -12,6 +13,8 @@ const HomeScreen = () => {
                 }}
                 source={require("../assets/logo.png")}
             />
+
+            <NavOptions />
         </View>
     </SafeAreaView>
   )
