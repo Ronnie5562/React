@@ -10,6 +10,14 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 20,
+        marginHorizontal: 20,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
     }
 });
 
