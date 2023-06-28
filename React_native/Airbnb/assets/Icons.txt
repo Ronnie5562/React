@@ -1,0 +1,32 @@
+Icons Airbnb 
+
+>>>Icons for the TabNavigator screen
+
+import Fontisto from 'react-native-vector-icons/Fontisto’;
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5;
+import Feather from 'react-native-vector-icons/Feather;
+import EvilIcons from 'react-native-vector-icons/EvilIcons;
+
+
+<Fontisto name=”search” size={25} color={color} />;
+
+<FontAwesome name=”heart-o” size={25} color={color} />;
+
+<FontAwesome5 name=”airbnb” size={25} color={color} />;
+
+<Feather name=”message-square” size={25} color={color} />;
+
+<EvilIcons name=”user” size={25} color={color} />;
+
+
+
+==========================================================================
+
+
+>>>Icons for the Search Screen
+
+import Entypo from 'react-native-vector-icons/Entypo;
+<Entypo name=”location-pin” size={25} color={color} />;
+
+
