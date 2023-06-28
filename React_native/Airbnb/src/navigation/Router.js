@@ -4,12 +4,21 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import DestinationSearchScreen from '../screens/DestinationSearch'
 import GuestsScreen from '../screens/Guests'
+import HomeTabNavigator from './HomeTabNavigator'
 
 const Router = () => {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
             <Stack.Navigator>
+                <Stack.Screen 
+                    name={"HomeTabNavigator"}
+                    component={HomeTabNavigator}
+                    options={{
+                        title: 'Home Screeen',
+                        header: false,
+                    }}
+                />
                 <Stack.Screen 
                     name={"DestinationSearchScreen"}
                     component={DestinationSearchScreen}
