@@ -26,6 +26,7 @@ import {
 
 import Entype from 'react-native-vector-icons/Entypo';
 import HomeScreen from './src/screens/Home';
+import Post from './src/components/Post';
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;
@@ -68,7 +69,8 @@ function App(): JSX.Element {
     <>
       <StatusBar barStyle={"dark-content"} />
       <SafeAreaView>
-        <HomeScreen />
+        {/* <HomeScreen /> */}
+        <Post />
       </SafeAreaView>
     </>
   );

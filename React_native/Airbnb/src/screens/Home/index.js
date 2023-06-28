@@ -1,11 +1,11 @@
-import React from 'react'
-import styles from './styles'
+import React from 'react';
+import styles from './styles';
 import { 
   Text, 
   View, 
   ImageBackground, 
   Pressable 
-} from 'react-native'
+} from 'react-native';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const HomeScreen = () => {
