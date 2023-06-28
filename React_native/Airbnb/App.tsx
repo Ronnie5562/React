@@ -22,13 +22,13 @@ import {
   Header,
   LearnMoreLinks,
   ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+} from 'react-native/Libraries/NewAppScreen'
 import Entype from 'react-native-vector-icons/Entypo';
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/Post';
 import feed from './assets/data/feed';
 import SearchResultsScreen from './src/screens/SearchResults';
+import DestinationSearchScreen from './src/screens/DestinationSearch';
 
 
 const post1 = feed[0];
@@ -77,7 +77,8 @@ function App(): JSX.Element {
         {/* <Post 
           post={post1}
         /> */}
-        <SearchResultsScreen />
+        {/* <SearchResultsScreen /> */}
+        <DestinationSearchScreen />
       </SafeAreaView>
     </>
   );
