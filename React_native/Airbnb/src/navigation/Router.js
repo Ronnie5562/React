@@ -6,7 +6,7 @@ import DestinationSearchScreen from '../screens/DestinationSearch'
 import GuestsScreen from '../screens/Guests'
 import HomeTabNavigator from './HomeTabNavigator'
 
-const Router = () => {
+const Router = ({navigation}) => {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
@@ -16,14 +16,14 @@ const Router = () => {
                     component={HomeTabNavigator}
                     options={{
                         title: 'Home Screeen',
-                        header: false,
+                        headerShown: false,
                     }}
                 />
                 <Stack.Screen 
                     name={"DestinationSearchScreen"}
                     component={DestinationSearchScreen}
                     options={{
-                        title: 'Search your destination'
+                        title: 'Search your destination',
                     }}
                 />
                 <Stack.Screen 
