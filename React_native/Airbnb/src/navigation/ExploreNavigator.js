@@ -3,7 +3,7 @@ import HomeScreen from '../screens/Home';
 import { Text, View } from 'react-native';
 import SearchResultsScreen from '../screens/SearchResults';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import SearchResultsTabNavigator from './SearchResultsTabNavigator';
 const Router = () => {
     const Stack = createNativeStackNavigator();
 
@@ -16,10 +16,10 @@ const Router = () => {
                     headerShown: false,
                 }}
             />
-            
+
             <Stack.Screen 
                 name={"SearchResults"}
-                component={SearchResultsScreen}
+                component={SearchResultsTabNavigator}
                 options={{
                     title: 'Seacrch for your destination'
                 }}

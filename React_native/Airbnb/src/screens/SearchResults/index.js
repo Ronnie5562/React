@@ -7,9 +7,9 @@ const SearchResultsScreen = (props) => {
     return (
       <View>
         <FlatList 
-            data={feed}
-            renderItem={({item}) => <Post post={item} />}
-            keyExtractor={(item) => item.id}
+          data={feed}
+          renderItem={({item}) => <Post post={item} />}
+          keyExtractor={(item) => item.id}
         />
       </View>
     )
