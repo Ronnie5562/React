@@ -2,13 +2,15 @@ const { StyleSheet } = require("react-native");
 
 const styles = StyleSheet.create({
     container: {
-        margin: 20,
-        color: '#000',
+        padding: 20,
+        height: '100%',
+        backgroundColor: 'white',
     },
     textInput: {
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: '600',
         marginBottom: 20,
+        color: '#000',
     },
     row: {
         flexDirection: 'row',
