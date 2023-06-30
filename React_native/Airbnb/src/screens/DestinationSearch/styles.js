@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     textInput: {
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: '600',
         marginBottom: 20,
         color: '#000',

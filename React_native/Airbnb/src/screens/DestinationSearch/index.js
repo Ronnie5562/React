@@ -12,25 +12,27 @@ const DestinationSearchScreen = () => {
 
   return (
     <View style={styles.container}>
-        <GooglePlacesAutocomplete
-            placeholder='Search'
-            onPress={(data, details = null) => {
-                // 'details' is provided when fetchDetails = true
-                console.log(data, details)
-                navigation.navigate('GuestsScreen')
-            }}
-            fetchDetails
-            styles={{
-                textInput: styles.textInput,
-            }}
-            query={{
-                key: 'AIzaSyCsWAEP_1EEHtbrdfx2y-kCHlqm5jfBKrc',
-                language: 'en',
-                type: '(cities)'
-            }}
-            suppressDefaultStyles
-            renderRow={(item) => <SuggestionRow item={item} />}
-        />
+        <View style={{height: 500, color: '#000'}}>
+            <GooglePlacesAutocomplete
+                placeholder='Search'
+                onPress={(data, details = null) => {
+                    // 'details' is provided when fetchDetails = true
+                    console.log(data, details)
+                    navigation.navigate('GuestsScreen')
+                }}
+                fetchDetails
+                styles={{
+                    textInput: styles.textInput,
+                }}
+                query={{
+                    key: 'AIzaSyCsWAEP_1EEHtbrdfx2y-kCHlqm5jfBKrc',
+                    language: 'en',
+                    type: '(cities)'
+                }}
+                suppressDefaultStyles
+                renderRow={(item) => <SuggestionRow item={item} />}
+            />
+        </View>
 
         {/* <FlatList 
             data={SearchResults}
