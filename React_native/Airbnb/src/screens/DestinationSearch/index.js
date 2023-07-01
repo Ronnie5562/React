@@ -1,7 +1,7 @@
 import styles from './styles';
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import SuggestionRow from './SuggestionRow';
 
@@ -18,7 +18,7 @@ const DestinationSearchScreen = () => {
                     console.log(data, details)
                     navigation.navigate('GuestsScreen')
                 }}
-                fetchDetails
+                fetchDetails={true}
                 styles={{
                     textInput: styles.textInput,
                 }}
@@ -33,7 +33,7 @@ const DestinationSearchScreen = () => {
         </View>
 
         {/* <FlatList 
-            data={SearchResults}
+            data={{SearchResults}}
             renderItem={({item}) => (
                 <Pressable style={styles.row} onPress={() => navigation.navigate('GuestsScreen')}>
                     <View style={styles.iconContainer}>

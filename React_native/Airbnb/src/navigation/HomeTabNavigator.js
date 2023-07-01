@@ -48,17 +48,17 @@ const HomeTabNavigator = () => {
                 }}
             />
             <Tab.Screen 
-                name={"Airbnb"}
+                name={"Kigali homes"}
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({}) => (
-                        <FontAwesome5 name='airbnb' size={30} color={'#f15454'} />
+                        <FontAwesome5 name='home' size={30} color={'#f15454'} />
                     ),
                     headerShown: false,
                 }}
             />
             <Tab.Screen 
-                name={"Messages"}
+                name={"inbox"}
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({}) => (
