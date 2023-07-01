@@ -1,7 +1,7 @@
 import styles from './styles';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, TextInput, FlatList, Pressable } from 'react-native';
+import { View } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import SuggestionRow from './SuggestionRow';
 
@@ -10,7 +10,7 @@ const DestinationSearchScreen = () => {
 
   return (
     <View style={styles.container}>
-        <View style={{height: 500, color: '#000'}}>
+        <View style={{height: 500, color: '#000', width: '100%'}}>
             <GooglePlacesAutocomplete
                 placeholder='Search'
                 onPress={(data, details = null) => {
@@ -23,7 +23,7 @@ const DestinationSearchScreen = () => {
                     textInput: styles.textInput,
                 }}
                 query={{
-                    key: 'AIzaSyCsWAEP_1EEHtbrdfx2y-kCHlqm5jfBKrc',
+                    key: 'AIzaSyAnZA_CnbW6V4sB7OvZ9P6spiAZAYTKh7w',
                     language: 'en',
                     type: '(cities)'
                 }}
