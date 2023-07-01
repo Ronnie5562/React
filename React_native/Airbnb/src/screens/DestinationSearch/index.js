@@ -1,7 +1,5 @@
 import styles from './styles';
 import React, { useState } from 'react';
-import Entypo from 'react-native-vector-icons/Entypo';
-import SearchResults from '../../../assets/data/search';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, FlatList, Pressable } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
