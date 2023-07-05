@@ -71,12 +71,22 @@ const HomeTabNavigator = () => {
                     headerShown: false,
                 }}
             />
+            {/* <Tab.Screen 
+                name={"inbox"}
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({}) => (
+                        <Feather name='message-square' size={30} color={'#f15454'} />
+                    ),
+                    headerShown: false,
+                }}
+            /> */}
             <Tab.Screen 
                 name={"profile"}
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({}) => (
-                        <EvilIcons name='user' size={30} color={'#f15454'} />
+                        <EvilIcons  name='user' size={30} color={'#f15454'} />
                     ),
                     headerShown: false,
                 }}
