@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import places from '../../../assets/data/feed';
 import { View, StyleSheet, Text } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import CustomMarker from '../../components/CustomMarker';
 
 const styles = StyleSheet.create({
     container: {
@@ -15,35 +17,35 @@ const styles = StyleSheet.create({
     },
 });
 
-const SearchResultsMap = () => (
-    <View style={styles.container}>
-        <MapView
-            provider={PROVIDER_GOOGLE}
-            style={styles.map}
-            initialRegion={{
-                latitude: 28.3279822,
-                longitude: -16.5124847,
-                latitudeDelta: 0.8,
-                longitudeDelta: 0.8,
-            }}
-        >
-            <Marker
-                coordinate={{latitude: 28.3279822, longitude: -16.5124847}}
-                title={'house'}
-                description={'house desc'}
+const SearchResultsMap = () => {
+
+    const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+
+    return(
+        <View style={styles.container}>
+            <MapView
+                provider={PROVIDER_GOOGLE}
+                style={styles.map}
+                initialRegion={{
+                    latitude: 28.3279822,
+                    longitude: -16.5124847,
+                    latitudeDelta: 0.8,
+                    longitudeDelta: 0.8,
+                }}
             >
-                <View style={{
-                    backgroundColor: 'white', 
-                    padding: 2,
-                    borderWidth: 2,
-                    borderRadius: 15,
-                    borderColor: 'grey',
-                }}>
-                    <Text style={{color: '#000', fontWeight: 'bold'}}>$300</Text>
-                </View>
-            </Marker>
-        </MapView>
-    </View>
-);
+                {
+                    places.map(place => ( 
+                        <CustomMarker
+                            price={place.newPrice}
+                            coordinate={place.coordinate}
+                            isSelected={place.id == selectedPlaceId}
+                            onPress={() => setSelectedPlaceId(place.id)}
+                        />
+                    ))
+                }
+            </MapView>
+        </View>
+    )
+};
 
 export default SearchResultsMap;
