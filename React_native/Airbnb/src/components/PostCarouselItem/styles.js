@@ -2,10 +2,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        margin: 20,
-        flexDirection: 'row',
+        height: 130,
+        padding: 5,
     },
-    innerContainer: {},
+    innerContainer: {
+        flexDirection: 'row',
+        backgroundColor: 'white',
+        borderRadius: 10,
+        overflow: 'hidden'
+    },
     image: {
         height: '100%',
         aspectRatio: 1 / 1,

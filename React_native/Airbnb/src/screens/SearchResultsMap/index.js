@@ -49,7 +49,7 @@ const SearchResultsMap = () => {
 
             <View style={{
                 position: 'absolute',
-                bottom: 10,
+                bottom: 40,
             }}>
                 <PostCarouselItem 
                     post={places[2]}
