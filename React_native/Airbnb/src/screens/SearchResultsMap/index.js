@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import places from '../../../assets/data/feed';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from '../../components/CustomMarker';
 import PostCarouselItem from '../../components/PostCarouselItem';
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 const SearchResultsMap = () => {
 
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+    const width = useWindowDimensions().width;
 
     return(
         <View style={styles.container}>
@@ -49,10 +50,16 @@ const SearchResultsMap = () => {
 
             <View style={{
                 position: 'absolute',
-                bottom: 40,
+                bottom: 28,
             }}>
-                <PostCarouselItem 
-                    post={places[2]}
+                <FlatList 
+                    data={places}
+                    renderItem={({ item }) => <PostCarouselItem post={item} />}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    snapToInterval={width - 60}
+                    snapToAlignment='center'
+                    decelerationRate={"normal"}
                 />
             </View>
         </View>
