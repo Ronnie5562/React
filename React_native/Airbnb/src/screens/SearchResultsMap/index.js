@@ -3,6 +3,7 @@ import places from '../../../assets/data/feed';
 import { View, StyleSheet, Text } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from '../../components/CustomMarker';
+import PostCarouselItem from '../../components/PostCarouselItem';
 
 const styles = StyleSheet.create({
     container: {
@@ -36,6 +37,7 @@ const SearchResultsMap = () => {
                 {
                     places.map(place => ( 
                         <CustomMarker
+                            key={place.id}
                             price={place.newPrice}
                             coordinate={place.coordinate}
                             isSelected={place.id == selectedPlaceId}
@@ -44,6 +46,15 @@ const SearchResultsMap = () => {
                     ))
                 }
             </MapView>
+
+            <View style={{
+                position: 'absolute',
+                bottom: 10,
+            }}>
+                <PostCarouselItem 
+                    post={places[2]}
+                />
+            </View>
         </View>
     )
 };
