@@ -20,9 +20,18 @@ const styles = StyleSheet.create({
 
 const SearchResultsMap = () => {
 
-    const width = useWindowDimensions().width;
     const flatlist = useRef();
+    const width = useWindowDimensions().width;
+    const mapRef = useRef();
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+    const viewConfig = useRef({ itemVisiblePercentThreshold: 70 });
+    const onViewChanged = useRef(({ viewableItems }) => {
+        // console.log(viewableItems)
+        if (viewableItems.length > 0){
+            const selectedPlace = viewableItems[0].item
+            setSelectedPlaceId(selectedPlace.id)
+        }
+    })
 
     useEffect(() => {
         if (!selectedPlaceId || !flatlist){
@@ -30,11 +39,22 @@ const SearchResultsMap = () => {
         }
         const index = places.findIndex(place => place.id === selectedPlaceId)
         flatlist.current.scrollToIndex({index})
+        const selectedPlace = places[index];
+
+        const region = {
+            latitude: selectedPlace.coordinate.latitude,
+            longitude: selectedPlace.coordinate.longitude,
+            latitudeDelta: 0.8, // how zoomed in we should be
+            longitudeDelta: 0.8 // how zoomed in we should be
+        }
+
+        mapRef.current.animateToRegion(region);
     }, [selectedPlaceId])
 
     return(
         <View style={styles.container}>
             <MapView
+                ref={mapRef}
                 provider={PROVIDER_GOOGLE}
                 style={styles.map}
                 initialRegion={{
@@ -70,9 +90,8 @@ const SearchResultsMap = () => {
                     snapToInterval={width - 60}
                     snapToAlignment={"center"}
                     decelerationRate={"fast"}
-                    onViewableItemsChanged={({viewableItems}) => {
-                        console.log(viewableItems)
-                    }}
+                    viewabilityConfig={viewConfig.current}
+                    onViewableItemsChanged={onViewChanged.current}
                 />
             </View>
         </View>
