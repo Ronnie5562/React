@@ -5,14 +5,14 @@ const styles = StyleSheet.create({
         height: 120,
         padding: 3,
 
-        shadowColor: "#000",
+        shadowColor: "#000000",
         shadowOffset: {
             width: 0,
-            height: 5,
+            height: 9,
         },
-        shadowOpacity: 6.34,
-        shadowRadius: 6.27,
-        elevation: 10,
+        shadowOpacity: 0.22,
+        shadowRadius: 9.22,
+        elevation: 12
     },
     innerContainer: {
         flexDirection: 'row',

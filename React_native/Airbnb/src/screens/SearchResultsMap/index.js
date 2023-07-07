@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import places from '../../../assets/data/feed';
 import { View, StyleSheet, Text, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
@@ -20,8 +20,17 @@ const styles = StyleSheet.create({
 
 const SearchResultsMap = () => {
 
-    const [selectedPlaceId, setSelectedPlaceId] = useState(null);
     const width = useWindowDimensions().width;
+    const flatlist = useRef();
+    const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+
+    useEffect(() => {
+        if (!selectedPlaceId || !flatlist){
+            return;
+        }
+        const index = places.findIndex(place => place.id === selectedPlaceId)
+        flatlist.current.scrollToIndex({index})
+    }, [selectedPlaceId])
 
     return(
         <View style={styles.container}>
@@ -52,14 +61,18 @@ const SearchResultsMap = () => {
                 position: 'absolute',
                 bottom: 28,
             }}>
-                <FlatList 
+                <FlatList
+                    ref={flatlist} 
                     data={places}
                     renderItem={({ item }) => <PostCarouselItem post={item} />}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     snapToInterval={width - 60}
-                    snapToAlignment='center'
-                    decelerationRate={"normal"}
+                    snapToAlignment={"center"}
+                    decelerationRate={"fast"}
+                    onViewableItemsChanged={({viewableItems}) => {
+                        console.log(viewableItems)
+                    }}
                 />
             </View>
         </View>
