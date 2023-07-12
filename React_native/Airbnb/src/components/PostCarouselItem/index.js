@@ -12,7 +12,7 @@ const PostCarouselItem = (props) => {
     navigation.navigate('Post', { postId: post.id})
   }
   return (
-    <Pressable onPress={goToPostPage} style={[styles.container, {width: width - 60}]}>
+    <Pressable onPress={goToPostPage} style={[styles.container, {width: width - 50}]}>
       <View style={styles.innerContainer}>
         <Image 
           style={styles.image} 
