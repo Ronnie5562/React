@@ -1,8 +1,8 @@
-import React from 'react';
-// import moment from 'moment/moment';
+import React, { useState } from 'react';
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
 
+// import moment from 'moment/moment';
 const moment = require('moment');
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -11,16 +11,27 @@ const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=Ne
 
 
 const News = ({ simplified }) => {
+  const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 6 : 12 });
 
   if (!cryptoNews?.value) return 'Loading News.....';
-
 
   console.log(cryptoNews);
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
-        <
+        <Col span={24}>
+          <Select
+            showSearch
+            className='select-news'
+            placeholder='Select a Crypto'
+            optionFilterProp='Children'
+            onChange={(value) => console.log(value)}
+            filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+          >
+
+          </Select>
+        </Col>
       )}
       {
         cryptoNews?.value?.map((news, index) => (
