@@ -4,12 +4,16 @@ import styles from './welcome.style';
 import { COLORS, SIZES } from '../../constants';
 import { Feather, Ionicons } from "@expo/vector-icons"
 import { TextInput } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+
 const Welcome = () => {
-  return (
+    const navigation = useNavigation();
+
+    return (
     <View style={styles.container}>
         <View style={styles.container}>
             <Text
-                style={styles.welcomeTxt(SIZES.xSmall ,COLORS.black)}
+                style={styles.welcomeTxt(SIZES.xSmall - 2, COLORS.black)}
             >
                 Find The Most
             </Text>
@@ -29,7 +33,7 @@ const Welcome = () => {
                 <TextInput
                     style={styles.searchInput}
                     value=''
-                    onPressIn={() => {}}
+                    onPressIn={() => {navigation.navigate("Search")}}
                     placeholder='What are you looking for?'
                 />
             </View>
@@ -41,7 +45,7 @@ const Welcome = () => {
             </View>
         </View>
     </View>
-  )
+    )
 }
 
 export default Welcome;

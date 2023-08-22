@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from 'react';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
-import { Cart } from './screens';
+import { Cart, ProductDetails } from './screens';
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -47,6 +47,14 @@ export default function App() {
         <Stack.Screen
           name='Cart'
           component={Cart}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name='ProductDetails'
+          component={ProductDetails}
           options={{
             headerShown: false,
           }}
