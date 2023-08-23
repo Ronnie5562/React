@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, Image } from 'react-native';
-import { Ionicons, SimpleLineIcons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { Ionicons, SimpleLineIcons, MaterialCommunityIcons, Fontisto } from '@expo/vector-icons'
 import styles from './productDetails.style';
 import { COLORS, SIZES } from '../constants';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const ProductDetails = ({ navigation }) => {
     const [count, setCount] = useState(1);
@@ -126,7 +125,9 @@ const ProductDetails = ({ navigation }) => {
                     style={styles.addCart}
                 >
                     <Fontisto
-                        
+                        name="shopping-bag"
+                        size={22}
+                        color={COLORS.lightWhite}
                     />
                 </TouchableOpacity>
               </View>
